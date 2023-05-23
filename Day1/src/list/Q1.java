@@ -7,8 +7,9 @@ public class Q1 {
 	{
 		int arr1[]= {1,2,3,4,5,6,7};
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the element");
+		System.out.print("Enter the element: ");
 		int a=sc.nextInt();
+		sc.close();
 		
 		int c=0;
 		for(int i=0;i<arr1.length;i++)
