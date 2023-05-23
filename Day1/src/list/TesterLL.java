@@ -14,10 +14,17 @@ public class TesterLL {
 	
 		l1.display();
 		
-		l1.deleteAtLast();
+//		l1.deleteAtLast();
+//		l1.display();
+		
+//		l1.search(56);
+		
+		l1.deleteAtBeg();
 		l1.display();
 		
-		l1.search(56);
+//		l1.insertAtLast(10);
+//		l1.display();
+
 
 	}
 

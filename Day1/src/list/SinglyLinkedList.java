@@ -34,13 +34,27 @@ public class SinglyLinkedList {
 		
 	}
 	public boolean insertAtLast(int v) {
+		Node nn=new Node(v);
+		if(nn==null)
 		return false;
+		
+		Node temp=head;
+		while(temp.getNext()!=null) {
+			temp=temp.getNext();
+		}
+		temp.setNext(nn);
+		return true;
 		
 	}
 	public boolean deleteAtBeg() {
-		
-		
-		return false;
+		if(head==null) 
+			return false;
+		else {
+			Node temp=head;
+			temp=temp.getNext();
+			head=temp;
+		}
+		return true;
 		
 	}
 	public boolean deleteAtLast() {
@@ -58,7 +72,7 @@ public class SinglyLinkedList {
 	}
 	public void display() {
 		Node temp=head;
-		System.out.println("\nList Elements  -");
+		System.out.print("\nList Elements  -");
 		while(temp!=null) {
 			System.out.print("\t"+temp.getData());
 			temp=temp.getNext();
@@ -72,7 +86,7 @@ public class SinglyLinkedList {
 		while(temp!=null) {
 			//c is position every time it will increase if data not found
 			c++;
-			//if will run when ata found
+			//it will run when data found
 			if(v==temp.getData()) {
 				//print msg found with position
 				System.out.println("\n"+v+" found at position "+c);
