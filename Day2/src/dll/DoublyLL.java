@@ -2,6 +2,7 @@ package dll;
 
 import java.util.Scanner;
 
+
 public class DoublyLL {
 	Node head, tail;
 	Scanner sc;
@@ -154,38 +155,70 @@ public class DoublyLL {
 	}
 
 	public boolean deleteAtPos(int p) {
-		if(head==null) 
-			return false;	
+//		if(head==null) 
+//			return false;	
+//		
+//		if(p<=0) {
+//			System.out.println("\nPlease enter positive number as position");
+//			return false;
+//		}
+//		if(p==1) {
+//			deleteAtBeg();
+//		}
+//		
+//		else {
+//			Node temp=head;
+//			int i=1;
+//			while(i<p-1 && temp!=null) {
+//				temp=temp.getNext();
+//				i++;
+//			}
+//			
+//			if(temp==null) {
+//				System.out.println("\nPlease enter a valid position");
+//				return false;
+//			}
+//			
+//			Node t=temp.getNext();
+//			temp.setNext(t.getNext());
+//			t.setNext(null);
+//			t.setPrev(null);
+//			
+//			
+//			
+//		}
 		
-		if(p<=0) {
-			System.out.println("\nPlease enter positive number as position");
+		if(p<=0)
+		{
+			System.out.println("\nPlease Enter Valid +ve Position");
 			return false;
 		}
-		if(p==1) {
+		if(p==1)
+		{
 			deleteAtBeg();
+			return true;
 		}
-		
-		else {
-			Node temp=head;
-			int i=1;
-			while(i<p-1 && temp!=null) {
-				temp=temp.getNext();
-				i++;
-			}
-			
-			if(temp==null) {
-				System.out.println("\nPlease enter a valid position");
+		Node temp=head;
+		int i=1;
+		while(i<p-1) {
+			i++;
+			temp=temp.getNext();
+			if(temp.getNext()==null)
+			{
+				System.out.println("\nInvalid Position");
 				return false;
 			}
-			
-			Node t=temp.getNext();
-			temp.setNext(t.getNext());
-			t.setNext(null);
-			t.setPrev(null);
-			
-			
-			
 		}
+		Node t=temp.getNext();
+		
+		temp.setNext(t.getNext());
+		t.getNext().setPrev(temp);;
+		
+		if(t.getNext()==null)
+			tail=temp;
+		t.setNext(null);
+		t.setPrev(null);
+		
 		return true;	
 	}
 
