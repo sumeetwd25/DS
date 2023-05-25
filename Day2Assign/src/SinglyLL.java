@@ -57,20 +57,19 @@ public class SinglyLL {
 		
 		while(temp.getNext()!=null)
 		{
-			Node t=head;
+			Node t=temp.getNext();
 			while(t.getNext()!=null)
 			{
 			if(temp.getData() == t.getNext().getData())
 				{
 					t.setNext(t.getNext().getNext());
 					t.getNext().setNext(null);
-					System.out.println("deled");
+					System.out.println("deleted");
 				}
 				t=t.getNext();
 			}
 			temp=temp.getNext();
-		}
-		
+		}		
 		return true;
 	}
 	
